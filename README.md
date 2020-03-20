@@ -1,4 +1,5 @@
 # rodrigo.leopoldo
+My personal portfolio made with VueJS + Typescript and PWA Support.
 
 ## Project setup
 ```
@@ -24,6 +25,3 @@ npm run test:unit
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

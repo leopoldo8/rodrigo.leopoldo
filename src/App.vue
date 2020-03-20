@@ -1,32 +1,44 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Vue from 'vue';
+import Component from 'vue-class-component';
 
-#nav {
-  padding: 30px;
+import Navbar from '@/components/atoms/navbar.vue';
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+@Component({
+  name: 'app',
+  components: {
+    Navbar,
+  },
+})
+export default class App extends Vue {}
+</script>
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
+<style lang="sass">
+@import '@/assets/sass/reset'
+
+#app
+  font-family: 'Avenir', Helvetica, Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  text-align: center
+  color: #2c3e50
+  width: 100vw
+  height: 100vh
+
+#nav
+  padding: 30px
+
+  a
+    font-weight: bold
+    color: #2c3e50
+
+    &.router-link-exact-active
+      color: #42b983
+
 </style>
