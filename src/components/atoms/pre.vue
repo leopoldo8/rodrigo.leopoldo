@@ -1,6 +1,6 @@
 <template>
   <pre class="bash">
-    <slot />
+    > <slot />
   </pre>
 </template>
 
@@ -25,5 +25,6 @@ pre.bash
   width: 100%
   display: inline-block
   text-shadow: 0px 0px 3px $white
+  margin: 5px 0
 
 </style>

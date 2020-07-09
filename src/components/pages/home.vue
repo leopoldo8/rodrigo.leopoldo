@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <div class="flicker" />
-    <Pre> > Writing Webpack... </Pre>
+    <p>press any key to continue</p>
+    <Input />
   </div>
 </template>
 
@@ -9,11 +10,13 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import Pre from '@/components/atoms/pre.vue';
+import Input from '@/components/molecules/input.vue';
 
 @Component({
   name: 'Home',
   components: {
     Pre,
+    Input,
   },
 })
 export default class Home extends Vue {}
@@ -28,6 +31,15 @@ export default class Home extends Vue {}
   width: 100%
   height: 100%
   text-align: left
+
+  p
+    color: $white
+    font-size: medium
+    font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,Courier New, monospace
+    text-shadow: 0px 0px 3px $white
+    padding: 5px 0
+    text-indent: 18px
 
   &:after
     content: ""
