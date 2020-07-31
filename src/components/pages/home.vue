@@ -1,12 +1,15 @@
 <template>
   <div class="home">
     <div class="flicker" />
-    <p>press any key to continue</p>
-    <Input />
+    <div class="scanline" />
+    <div class="terminal" ref="terminal" />
   </div>
 </template>
 
-<script>
+<script lang="ts">
+/* eslint-disable class-methods-use-this */
+/* eslint-disable no-await-in-loop */
+
 import Vue from 'vue';
 import Component from 'vue-class-component';
 import Pre from '@/components/atoms/pre.vue';
@@ -19,7 +22,47 @@ import Input from '@/components/molecules/input.vue';
     Input,
   },
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  mounted() {
+    this.boot();
+  }
+
+  clear() {
+    if (this.$refs.terminal) this.$refs.terminal.innerHTML = '';
+  }
+
+  async boot() {
+    this.clear();
+    await this.type('Hi! that\'s my personal website stylized to look like an old terminal.');
+    await this.type('Did you like it?', true);
+    await this.type('Type "help" to see the commands 🙂');
+
+    // this.main();
+  }
+
+  pause(s: number = 1) {
+    return new Promise(resolve => setTimeout(resolve, 1000 * Number(s)));
+  }
+
+  async type(text: string, inline?: boolean, container: any = this.$refs.terminal) {
+    await this.pause(1);
+
+    const queue = text.split('');
+    const newContainer = container;
+
+    while (queue.length) {
+      const char = queue.shift();
+      newContainer.innerHTML += char;
+      await this.pause(0.058);
+    }
+
+    if (inline) newContainer.innerHTML += ' ';
+    else newContainer.innerHTML += '<br/>';
+
+    await this.pause(0.5);
+    newContainer.classList.remove('active');
+  }
+}
 </script>
 
 <style lang="sass" scoped>
@@ -30,16 +73,21 @@ export default class Home extends Vue {}
   background-image: radial-gradient(#414141c2, black 120%)
   width: 100%
   height: 100%
+  box-sizing: border-box
   text-align: left
+  padding: 20px
 
-  p
+  p, .terminal
     color: $white
     font-size: medium
     font-family: Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,
     Bitstream Vera Sans Mono,Courier New, monospace
     text-shadow: 0px 0px 3px $white
-    padding: 5px 0
-    text-indent: 18px
+    line-height: 2
+
+    p
+      text-indent: 18px
+      padding: 5px 0
 
   &:after
     content: ""

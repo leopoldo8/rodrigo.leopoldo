@@ -1,6 +1,7 @@
 <template>
   <Pre>
-    <input v-model="value" id="caret-demo" class="caretjs" maxlength="15" />
+    <input type="text" id="stdin">
+    <span id="cursor" style="display: none;">_</span>
   </Pre>
 </template>
 <script lang="ts">
@@ -14,7 +15,34 @@ import Pre from '@/components/atoms/pre.vue';
     Pre,
   },
 })
-export default class Input extends Vue {}
+export default class Input extends Vue {
+  stdin = document.getElementById('stdin');
+
+  cursor = document.getElementById('cursor');
+
+  created() {
+    let e = this.cursor;
+    if (e) {
+      e.className = 'cursor';
+      e.onfocus = this.focus;
+      e.onclick = this.focus;
+      e = this.stdin;
+      e.className = 'stdin';
+      e.onkeyup = function keyup() {
+        this.style.width = `${this.value.length}.1em`;
+      };
+      e = null;
+    }
+  }
+
+  focus() {
+    setTimeout(() => {
+      if (this.stdin) {
+        this.stdin.focus();
+      }
+    }, 0);
+  }
+}
 </script>
 
 <style lang="sass" scoped>
