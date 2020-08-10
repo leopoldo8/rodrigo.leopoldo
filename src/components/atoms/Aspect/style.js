@@ -1,5 +1,45 @@
 import styled, { keyframes } from 'styled-components';
 
+export const Scanline = styled.div`
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0),
+      rgba(255,255,255,0) 50%,
+      rgba(0,0,0,.2) 70%,
+      rgba(0,0,0,.6)
+  );
+  background-size: 100% .3rem;
+  position: fixed;
+  pointer-events: none;
+
+  &:before {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    background: linear-gradient(to bottom,
+      rgba(255,0,0,0) 0%,
+      rgba(255,250,250,1) 50%,
+      rgba(255,255,255,0.98) 51%,
+      rgba(255,0,0,0) 100%
+    );
+    opacity: .1;
+  }
+
+  &:after {
+    box-shadow: 0 2px 6px rgba(25,25,25,0.2),
+      inset 0 1px rgba(50,50,50,0.1),
+      inset 0 3px rgba(50,50,50,0.05),
+      inset 0 3px 8px rgba(64,64,64,0.05),
+      inset 0 -5px 10px rgba(25,25,25,0.1);
+  }
+`
+
 const flicker = keyframes`
   0% {
     opacity: 0.552;
@@ -72,7 +112,7 @@ export const Flicker = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(18, 16, 16, 0.2);
+  background: rgba(18, 16, 16, 0.008);
   opacity: 0;
   z-index: 1000;
   pointer-events: none;
