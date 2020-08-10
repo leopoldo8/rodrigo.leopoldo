@@ -1,27 +1,15 @@
-# rodrigo.leopoldo
-My personal portfolio made with VueJS + Typescript and PWA Support.
+# 🚀 Welcome to your new awesome project!
 
-## Project setup
-```
-npm install
-```
+This project has been created using **webpack scaffold**, you can now run
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
 ```
 npm run build
 ```
 
-### Run your unit tests
+or
+
 ```
-npm run test:unit
+yarn build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+to bundle your application
