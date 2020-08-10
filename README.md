@@ -1,12 +1,22 @@
 # About me
 
-Hi, my name's Rodrigo. =)
+Hi, my name's Rodrigo 🙂
 
 I'm 17. I study at IFSUL (High school and electronics technician course) in the morning and work as a Frontend developer at Nodo Digital in the afternoon.
 
-I've already developed web (and mobile) applications with VueJs, React Native, TypeScript, and many other technologies to find or/and solve a problem with this beautiful thing called logic.
+I do love music, innovation, technology, thinking out of the box, and group work. Working through it all is just amazing.
 
-I particularly love music, innovation, technology, thinking out of the box, and group work, so working through it all is just amazing.
+# What do I do?
+
+I (love to) help peolpe solve their problems with all type of technology.
+
+# What technologies do I have experiencied trough this years of developer?
+
+> Those paragraphs above could change very often, since I'm always learning something new
+
+I have been developing web and mobile applications since 2017. Trough this years, I have been mainly working with HTML5, CSS3 and Javascript (EcmaScript 6 and so on) and it majors frameworks (mostly React and React Native, but also Node, Jquery, Vue, TypeScript,  Next, Nuxt, Nest, among others).
+
+I also have some experience (but never worked for real) with MongoDB, MySQL, C, C#, C++, Java, Python, Godot, Unity, GDScript, Figma, Skecth and others technologies/tools.
 
 # This Project
 
@@ -14,6 +24,5 @@ This is my website made to look like an old terminal.
 
 Besides I really liked this visual, I think this terminal style could truly pass what I love to do and then a little bit about who I am.
 
-What do I love to do?
+I hope you like it 😄
 
-To help peolpe solve their problems with technology =)
