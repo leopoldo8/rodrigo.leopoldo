@@ -9,8 +9,8 @@ import {
  */
 const Aspect = () => (
   <>
-    <Flicker />
     <Scanline />
+    <Flicker />
   </>
 );
 

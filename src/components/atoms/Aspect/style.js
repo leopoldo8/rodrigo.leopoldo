@@ -12,7 +12,7 @@ export const Scanline = styled.div`
       rgba(0,0,0,.2) 70%,
       rgba(0,0,0,.6)
   );
-  background-size: 100% .3rem;
+  background-size: 100% .2rem;
   position: fixed;
   pointer-events: none;
 
@@ -112,7 +112,7 @@ export const Flicker = styled.div`
   left: 0;
   bottom: 0;
   right: 0;
-  background: rgba(18, 16, 16, 0.008);
+  background: rgba(18, 16, 16, 0.05);
   opacity: 0;
   z-index: 1000;
   pointer-events: none;
